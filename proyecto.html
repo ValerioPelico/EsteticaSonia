@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Las Vías</title>
+    <link rel="shortcut icon" href="super.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#produ">Nuestros Productos</a>
+            <a href="#equipo">Nuestro Equipo</a>
+            <a href="#">Productos</a>
+        </nav>
+        <section class="textos-header">
+            <h1>ESTETICA SONIA</h1>
+            <h2>Creamos tu estilo</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+        <section id="nosotros" class="contenedor sobre-nosotros">
+            <h2 class="titulo">ESTETICA SONIA</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="super.jpg" alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h3><span>1</span>MISION</h3>
+                    <p>Satisfacer las necesidades de belleza de nuestros clientes mediante servicios de excelencia en la calidad que se brinda por personal altamente calificado que inspira confianza y seriedad, permitiendo superar las expectativas de nuestros clientes con el servicio prestado.</p>
+                    <h3><span>2</span>VISION</h3>
+                    <p>Ser una corporacion lider en la satisfaccion de necesidades de belleza a nivel nacional, ofrecer constantemente nuevos servicios y productos a nuestros clientes.</p>
+                        <h3><span>3</span>Valores</h3>
+                        <p>Innovacion, tendencia, vanguardia, moda y excelencia en calidad de servicio.</p>
+                        <h3><span>4</span>Cerca de ti</h3>
+                        <p>Proximamente estaremos mas cerca de ti con mas sucursales.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="produ" class="about-services">
+            <div class="contenedor">
+                <h2 class="titulo">Nuestros Productos y servicios</h2>
+                <div class="servicio-cont">
+                    <div class="servicio-ind">
+                        <img src="alisado.jpg" alt="" class="imagen-about-us">
+                        <h3>Alisados</h3>
+                        <p>Tener un pelo liso y libre de encrespado sin necesidad de usar plancha a diario es posible, nuestros tratamientos lo consigen, contactanos y pregunta por nuestras promosiones y descuentos por el mes de octubre. </p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="rizos.jpg" alt="" class="imagen-about-us">>
+                        <h3>Rizos</h3>
+                        <p>Consegir un rizo bonito y definido puede resultar complicado si no se conocen la peculiaridad de este tipo de cabellos y las tecnocas dosponibles para hacer, nostros contamos con la experiencia, acercate a nostros.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="spa.jpg" alt="" class="imagen-about-us">
+                        <h3>Spa de uñas</h3>
+                        <p>Muy pronto estara disponible nuestro spa de unas a precios especiales, diseños renovados, puedes contactarnos para conocer nuestros precios y dias de inaguracion para que realices tu cita.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipo" class="clientes contenedor">
+            <h2 class="titulo">Equipo de Desarrollo</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="valerio.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Valerio Pelicó Guox</h4>
+                        <p>0900-16-11957</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="andy.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Anderson Lopez</h4>
+                        <p>090-14-22285</p>
+                    </div>
+                </div>
+               
+                </div>
+            </div>
+        </section>
+
+        <div id='ubicacion'></div>
+<script type="text/javascript">
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(mostrarUbicacion);
+	} else {alert("¡Error! Este navegador no soporta la Geolocalización.");}
+function mostrarUbicacion(position) {
+    var times = position.timestamp;
+	var latitud = position.coords.latitude;
+	var longitud = position.coords.longitude;
+    var altitud = position.coords.altitude;	
+	var exactitud = position.coords.accuracy;	
+	var div = document.getElementById("ubicacion");
+	div.innerHTML = "Timestamp: " + times + "<br>Latitud: " + latitud + "<br>Longitud: " + longitud + "<br>Altura en metros: " + altitud + "<br>Exactitud: " + exactitud;}	
+function refrescarUbicacion() {	
+	navigator.geolocation.watchPosition(mostrarUbicacion);}	
+</script>
+<div id="demo"></div>
+<div id="mapholder"></div>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<button onclick="cargarmap()">Cargar mapa</button>
+<script type="text/javascript">
+var x=document.getElementById("demo");
+function cargarmap(){
+navigator.geolocation.getCurrentPosition(showPosition,showError);
+function showPosition(position)
+  {
+  lat=position.coords.latitude;
+  lon=position.coords.longitude;
+  latlon=new google.maps.LatLng(lat, lon)
+  mapholder=document.getElementById('mapholder')
+  mapholder.style.height='250px';
+  mapholder.style.width='500px';
+  var myOptions={
+  center:latlon,zoom:10,
+  mapTypeId:google.maps.MapTypeId.ROADMAP,
+  mapTypeControl:false,
+  navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+  };
+  var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
+  var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+  }
+function showError(error)
+  {
+  switch(error.code) 
+    {
+    case error.PERMISSION_DENIED:
+      x.innerHTML="Denegada la peticion de Geolocalización en el navegador."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML="La información de la localización no esta disponible."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML="El tiempo de petición ha expirado."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML="Ha ocurrido un error desconocido."
+      break;
+    }
+  }}
+</script>   
+
+    </main>
+    <footer>
+        <h2 class="titulo-final">&copy;Proyecto seminario</h2>
+    </footer>
+</body>
+
+</html>
