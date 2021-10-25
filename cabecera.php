@@ -20,7 +20,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 
- <a class="navbar-brand">Supermecado Las Vías</a>
+ <a class="navbar-brand">Estetica Sonia</a>
 
     <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse">
         <span class="navbar-toggler-icon"></span>
