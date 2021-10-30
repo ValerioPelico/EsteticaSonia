@@ -31,7 +31,7 @@
                 <a class="nav-link" href="proyecto.html">Home</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="mostrarCarrito.php">Carrito(<?php
+                <a class="nav-link" href="mostrarCarrito.php">CARRITO(<?php
                     echo(empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);
                 ?>)</a>
             </li>
